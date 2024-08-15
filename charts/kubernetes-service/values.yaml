@@ -1,0 +1,92 @@
+# Default values for your service.
+#
+# It is expected to provide specific values for this file either by:
+# 1. [RECOMMENDED] Override particular files in Helm chart using Skaffold profiles.
+# 2. Copying the file by itself into service repository and modify its content.
+#
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+# This is the version number of the application being deployed. This version number should be
+# incremented each time you make changes to the application. Versions are not expected to
+# follow Semantic Versioning. They should reflect the version the application is using.
+# It is recommended to use it with quotes.
+appVersion: "1.0.0"
+
+
+# This section describes Docker image properties for your service
+image:
+  repository: "YOUR_SERVICE_DOCKER_IMAGE_TAG"
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "latest"
+
+# This section describes properties of your service itself
+service:
+  type: NodePort
+  port: "YOUR_SERVICE_PORT"
+  path: "YOUR_SERVICE_CONTEXT_PATH"
+  customHealthCheckPath: ""
+  livenessProbe:
+    initialDelaySeconds: 30
+    timeoutSeconds: 1
+    periodSeconds: 30
+    successThreshold: 1
+    failureThreshold: 3
+  readinessProbe:
+    initialDelaySeconds: 30
+    timeoutSeconds: 1
+    periodSeconds: 30
+    successThreshold: 1
+    failureThreshold: 3
+
+env: { }
+
+# Permissions section
+serviceAccount: ""
+
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations: { }
+  hosts:
+    - host: "YOUR_SERVICE_EXTERNAL_HOST_NAME_FROM_ROUTE_53"
+      paths:
+        - path: "/YOUR_SERVICE_CONTEXT_PATH"
+          pathType: Prefix
+
+resources:
+  limits:
+    cpu: 1000m
+    memory: 2Gi
+  requests:
+    cpu: 256m
+    memory: 512Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 1
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+#  behavior:
+#    scaleDown:
+#      policies:
+#        - type: Percent
+#          value: 10
+#          periodSeconds: 60
+
+disruptionBudget:
+  enabled: false
+  spec:
+    maxUnavailable: 49%
+
+podAnnotations: { }
+imagePullSecrets: { }
+podSecurityContext: { }
+securityContext: { }
+nodeSelector: { }
+affinity: { }
+tolerations: { }
