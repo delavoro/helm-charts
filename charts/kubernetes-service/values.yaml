@@ -51,6 +51,7 @@ ingress:
   enabled: true
   className: "nginx"
   annotations: { }
+  host: "www.test.com"
   hosts:
     - host: "www.test.com"
       paths:
