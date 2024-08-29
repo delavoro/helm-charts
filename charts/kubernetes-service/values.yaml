@@ -52,7 +52,7 @@ ingress:
   className: "nginx"
   annotations: { }
   hosts:
-    - host: "YOUR_SERVICE_EXTERNAL_HOST_NAME_FROM_ROUTE_53"
+    - host: "www.test.com"
       paths:
         - path: "/YOUR_SERVICE_CONTEXT_PATH"
           pathType: Prefix
