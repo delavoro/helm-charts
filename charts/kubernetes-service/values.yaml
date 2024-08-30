@@ -44,7 +44,7 @@ service:
     successThreshold: 1
     failureThreshold: 3
 
-env: { }
+env: []
 
 # Permissions section
 serviceAccount: ""
