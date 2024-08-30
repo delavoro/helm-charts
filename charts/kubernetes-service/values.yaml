@@ -44,8 +44,19 @@ service:
     successThreshold: 1
     failureThreshold: 3
 
-env: []
-
+#env: []
+env:
+  - name: 'ENVIRONMENT'
+    value: '{{ .ENV_TYPE | default "dev" }}-{{ .ENV_INDEX | default "1" }}'
+  - name: MAIN_DB_NAME
+    value: authentication
+  - name: MAIN_DB_USER
+    value: postgres
+  - name: MAIN_DB_PASSWORD
+    valueFrom:
+      secretKeyRef:
+      name: 'postgres-password'
+      key: postgres-password
 # Permissions section
 serviceAccount: ""
 
