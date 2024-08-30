@@ -25,8 +25,8 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           securityContext:
-            {{- toYaml .Values.securityContext | nindent 12 }}
+            {{ toYaml .Values.securityContext | nindent 12 }}
           env:
-            {{- toYaml .Values.env | nindent 12 }}
+            {{ toYaml .Values.env | nindent 12 }}
           ports:
             - containerPort: {{ .Values.service.port }}
