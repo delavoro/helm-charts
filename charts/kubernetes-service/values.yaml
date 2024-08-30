@@ -29,6 +29,7 @@ image:
 service:
   type: NodePort
   port: "YOUR_SERVICE_PORT"
+  targetPort: "YOUR_CONTAINER_PORT"
   path: "YOUR_SERVICE_CONTEXT_PATH"
   customHealthCheckPath: ""
   livenessProbe:
