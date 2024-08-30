@@ -27,6 +27,9 @@ spec:
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           env:
-            {{- toYaml .Values.env | nindent 12 }}
+            {{- range .Values.env }}
+            - name: {{ .name | quote | nindent 12 }}
+              value: {{ .value | quote| nindent 14 }}
+            {{- end }}
           ports:
             - containerPort: {{ .Values.service.port }}
