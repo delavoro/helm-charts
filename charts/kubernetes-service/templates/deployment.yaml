@@ -30,6 +30,16 @@ spec:
             - name: {{ $key }}
               value: {{ $val | quote }}
             {{- end }}
+            {{- else }}
+            {{- range $index, $val := .Values.env }}
+            - name: {{ $val.name }}
+              {{- if $val.value }}
+              value: {{ $val.value | quote }}
+              {{- else }}
+              valueFrom:
+              {{- toYaml $val.valueFrom | nindent 16 -}}
+              {{- end }}
+            {{- end }}
             {{- end }}
           ports:
             - containerPort: {{ .Values.service.port }}
