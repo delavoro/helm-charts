@@ -43,3 +43,12 @@ spec:
             {{- end }}
           ports:
             - containerPort: {{ .Values.service.containerPort }}
+      {{- if and (eq .Values.appType "django") .Values.runMigrations }}
+      initContainers:
+      - name: {{ .Chart.Name }}-app-migration
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+        command: ["/bin/sh"]
+        args:
+          - "-c"
+          - python manage.py migrate
+      {{ end }}

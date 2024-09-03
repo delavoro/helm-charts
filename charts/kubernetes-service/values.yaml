@@ -18,6 +18,9 @@ appVersion: "1.0.0"
 nameOverride: ""
 
 
+appType: "django"
+runMigrations: True
+
 # This section describes Docker image properties for your service
 image:
   repository: "YOUR_SERVICE_DOCKER_IMAGE_TAG"
