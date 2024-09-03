@@ -2,7 +2,16 @@ apiVersion: v1
 entries:
   kubernetes-service:
   - apiVersion: v2
-    created: "2024-09-03T20:13:03.908539+03:00"
+    created: "2024-09-03T20:16:36.573153+03:00"
+    description: General Helm chart for services deployed in Kubernetes
+    digest: 14741a616f6db452f57bfaa63562e534ffd8f93f993854ae1eceb6b4466dedc7
+    name: kubernetes-service
+    type: application
+    urls:
+    - https://delavoro.github.io/helm-charts/kubernetes-service-1.0.4.tgz
+    version: 1.0.4
+  - apiVersion: v2
+    created: "2024-09-03T20:16:36.572862+03:00"
     description: General Helm chart for services deployed in Kubernetes
     digest: d8a800bd40ccf8a4fb68c69ce2d4e58c32dd73333af311ce9f3b4b174e5aee8b
     name: kubernetes-service
@@ -11,7 +20,7 @@ entries:
     - https://delavoro.github.io/helm-charts/kubernetes-service-1.0.3.tgz
     version: 1.0.3
   - apiVersion: v2
-    created: "2024-09-03T20:13:03.908184+03:00"
+    created: "2024-09-03T20:16:36.572306+03:00"
     description: General Helm chart for services deployed in Kubernetes
     digest: 40153880aec3167f3350df1e506fe5766335df3a5f429b8509a7b11ece536111
     name: kubernetes-service
@@ -20,7 +29,7 @@ entries:
     - https://delavoro.github.io/helm-charts/kubernetes-service-1.0.2.tgz
     version: 1.0.2
   - apiVersion: v2
-    created: "2024-09-03T20:13:03.907739+03:00"
+    created: "2024-09-03T20:16:36.571644+03:00"
     description: General Helm chart for services deployed in Kubernetes
     digest: ae5f19f6f63f2389d85cb9e3c0995219b0656ba0797e72021125ab668ba70c56
     name: kubernetes-service
@@ -29,7 +38,7 @@ entries:
     - https://delavoro.github.io/helm-charts/kubernetes-service-1.0.1.tgz
     version: 1.0.1
   - apiVersion: v2
-    created: "2024-09-03T20:13:03.907138+03:00"
+    created: "2024-09-03T20:16:36.571004+03:00"
     description: General Helm chart for services deployed in Kubernetes
     digest: 5e7bd449a7418d570530bcafafb53dce33c4bb49c826a0c25ae401a0c3feecb1
     name: kubernetes-service
@@ -37,4 +46,4 @@ entries:
     urls:
     - https://delavoro.github.io/helm-charts/kubernetes-service-1.0.0.tgz
     version: 1.0.0
-generated: "2024-09-03T20:13:03.903781+03:00"
+generated: "2024-09-03T20:16:36.569706+03:00"
