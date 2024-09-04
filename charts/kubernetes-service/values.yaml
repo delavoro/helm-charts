@@ -96,5 +96,5 @@ nodeSelector: { }
 affinity: { }
 tolerations: { }
 env: { }
-volumes: { }
+volumes: []
 volumeMounts: []
