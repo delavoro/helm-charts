@@ -43,6 +43,8 @@ spec:
             {{- end }}
           ports:
             - containerPort: {{ .Values.service.containerPort }}
+          volumes:
+          {{ toYaml .Values.volumes | indent 10 }}
       {{- if and (eq .Values.appType "django") .Values.runMigrations }}
       initContainers:
         - name: {{ .Chart.Name }}-app-migration
