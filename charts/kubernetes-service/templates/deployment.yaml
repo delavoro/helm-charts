@@ -76,4 +76,8 @@ spec:
           args:
             - "-c"
             - python manage.py migrate
+          {{- if .Values.volumeMounts }}
+          volumeMounts:
+            {{- toYaml .Values.volumeMounts | nindent 12 }}
+          {{- end }}
         {{ end }}
