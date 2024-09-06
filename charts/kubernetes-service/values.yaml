@@ -98,14 +98,3 @@ tolerations: { }
 env: { }
 volumes: { }
 volumeMounts: { }
-volumes:
-  - name: auth-service-private-key
-    secret: 
-      secretName: auth-service-private-key
-      items:
-        - key: private-key.pem
-  - name: auth-service-public-key
-    secret:
-      secretName: auth-service-public-key
-      items:
-        - key: public-key.pem

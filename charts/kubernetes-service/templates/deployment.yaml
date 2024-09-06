@@ -43,6 +43,8 @@ spec:
             {{- end }}
           ports:
             - containerPort: {{ .Values.service.containerPort }}
+          volumeMounts:
+            {{- toYaml .Values.volumeMounts | nindent 12 }}
       volumes:
       {{- toYaml .Values.volumes | nindent 8 }}
       {{- if and (eq .Values.appType "django") .Values.runMigrations }}
