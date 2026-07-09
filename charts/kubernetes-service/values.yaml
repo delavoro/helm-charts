@@ -55,12 +55,12 @@ ingress:
   enabled: true
   className: "nginx"
   annotations: { }
-  host: "YOUR_HOST"
   hosts:
     - host: "YOUR_HOST"
       paths:
         - path: "/YOUR_SERVICE_CONTEXT_PATH"
           pathType: Prefix
+  tls: []
 
 resources:
   limits:
